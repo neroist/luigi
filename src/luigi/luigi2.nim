@@ -739,5 +739,9 @@ proc fontActivate*(font: ptr Font): ptr Font {.cdecl, importc: "UIFontActivate".
 when defined(l2Debug):
   proc inspectorLog*(cFormat: cstring) {.varargs, cdecl, importc: "UIInspectorLog".}
 
+template KEYCODE_LETTER*(x: untyped): cint = cint(0 + x - int'A')
+template KEYCODE_DIGIT*(x: untyped): cint = cint(0 + x - int'0')
+template KEYCODE_FKEY*(x: untyped): cint = cint(0 + x - 1)
+
 when defined(lFreetype):
   export freetype

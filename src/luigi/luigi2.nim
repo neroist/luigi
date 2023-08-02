@@ -562,7 +562,7 @@ proc buttonSetLabel*(button: ptr Button; string: cstring; stringBytes: pointer =
     cdecl, importc: "UIButtonSetLabel".}
 proc labelCreate*(parent: ptr Element; flags: uint32 = 0; label: cstring;
                  labelBytes: pointer = castInt): ptr Label {.cdecl, importc: "UILabelCreate".}
-proc labelSetContent*(code: ptr Label; content: cstring; byteCount: cint) {.cdecl,
+proc labelSetContent*(code: ptr Label; content: cstring; byteCount: pointer = castInt) {.cdecl,
     importc: "UILabelSetContent".}
 proc imageDisplayCreate*(parent: ptr Element; flags: uint32 = 0; bits: ptr uint32;
                         width: csize_t; height: csize_t; stride: csize_t): ptr ImageDisplay {.
@@ -638,7 +638,7 @@ proc codeHitTest*(code: ptr Code; x: cint; y: cint): cint {.cdecl,
     importc: "UICodeHitTest".}
 ##  Returns line number; negates if in margin. Returns 0 if not on a line.
 
-proc codeInsertContent*(code: ptr Code; content: cstring; byteCount: cint;
+proc codeInsertContent*(code: ptr Code; content: cstring; byteCount: pointer = castInt;
                        replace: bool) {.cdecl, importc: "UICodeInsertContent".}
 proc drawBlock*(painter: ptr Painter; rectangle: Rectangle; color: uint32) {.cdecl,
     importc: "UIDrawBlock".}
@@ -732,7 +732,7 @@ proc colorToHSV*(rgb: uint32; hue: ptr cfloat; saturation: ptr cfloat; value: pt
     cdecl, importc: "UIColorToHSV".}
 proc colorToRGB*(hue: cfloat; saturation: cfloat; value: cfloat; rgb: ptr uint32) {.
     cdecl, importc: "UIColorToRGB".}
-proc stringCopy*(`in`: cstring; inBytes: cint): cstring {.cdecl,
+proc stringCopy*(`in`: cstring; inBytes: pointer = castInt): cstring {.cdecl,
     importc: "UIStringCopy".}
 proc fontCreate*(cPath: cstring; size: uint32): ptr Font {.cdecl,
     importc: "UIFontCreate".}

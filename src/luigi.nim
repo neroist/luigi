@@ -743,9 +743,9 @@ proc fontActivate*(font: ptr Font): ptr Font {.cdecl, importc: "UIFontActivate".
 when defined(lDebug):
   proc InspectorLog*(cFormat: cstring) {.varargs, cdecl, importc: "UIInspectorLog".}
 
-template KEYCODE_LETTER*(x: untyped): cint = cint(0 + int(x) - int'A')
-template KEYCODE_DIGIT*(x: untyped): cint = cint(0 + int(x) - int'0')
-template KEYCODE_FKEY*(x: untyped): cint = cint(0 + int(x) - 1)
+template KEYCODE_LETTER*(x: untyped): cint = cint(KEYCODE_A + int(x) - int'A')
+template KEYCODE_DIGIT*(x: untyped): cint = cint(KEYCODE_0 + int(x) - int'0')
+template KEYCODE_FKEY*(x: untyped): cint = cint(KEYCODE_F1 + int(x) - 1)
 
 when defined(lFreetype):
   export freetype, ftimage

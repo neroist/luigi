@@ -175,6 +175,23 @@ const
   UI_IMAGE_DISPLAY_ZOOM_FIT* = (1 shl 1)
   ELEMENT_FILL* = (ELEMENT_V_FILL or ELEMENT_H_Fill)
 
+  KEYCODE_A* = (97)
+  KEYCODE_BACKSPACE* = (65288)
+  KEYCODE_DELETE* = (65535)
+  KEYCODE_DOWN* = (65364)
+  KEYCODE_END* = (65367)
+  KEYCODE_ENTER* = (65293)
+  KEYCODE_ESCAPE* = (65307)
+  KEYCODE_F1* = (65470)
+  KEYCODE_HOME* = (65360)
+  KEYCODE_LEFT* = (65361)
+  KEYCODE_RIGHT* = (65363)
+  KEYCODE_SPACE* = (32)
+  KEYCODE_TAB* = (65289)
+  KEYCODE_UP* = (65362)
+  KEYCODE_INSERT* = (65379)
+  KEYCODE_0* = (48)
+
 type                          ##  General messages.
   Message* = enum
     msgPaint,               ##  dp = pointer to UIPainter

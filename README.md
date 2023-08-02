@@ -33,4 +33,4 @@ Like so:
 let label = labelCreate(addr panel.e, 0, "Label", cast[pointer](-1))
 ```
 
-If you just need to put in `-1`, use the `castInt` const instead of casting (though `castInt` should be default on most functions).
+If you just need to put in `-1`, use the `castInt` const instead of casting (though it should be default on most functions).

@@ -595,8 +595,8 @@ proc switcherCreate*(parent: ptr Element; flags: uint32 = 0): ptr Switcher {.cde
     importc: "UISwitcherCreate".}
 proc switcherSwitchTo*(switcher: ptr Switcher; child: ptr Element) {.cdecl,
     importc: "UISwitcherSwitchTo".}
-proc windowCreate*(owner: ptr Window; flags: uint32 = 0; cTitle: cstring; width: cint;
-                  height: cint): ptr Window {.cdecl, importc: "UIWindowCreate".}
+proc windowCreate*(owner: ptr Window; flags: uint32 = 0; cTitle: cstring; width: cint = 0;
+                  height: cint = 0): ptr Window {.cdecl, importc: "UIWindowCreate".}
 proc windowRegisterShortcut*(window: ptr Window; shortcut: Shortcut) {.cdecl,
     importc: "UIWindowRegisterShortcut".}
 proc windowPostMessage*(window: ptr Window; message: Message; dp: pointer) {.cdecl,

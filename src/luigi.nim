@@ -22,6 +22,9 @@ else:
 when defined(lFreetype):
   {.passC: "-DUI_FREETYPE".}
 
+when defined(lDebug):
+  {.passC: "-DUI_DEBUG".}
+
 {.passC: "-DUI_IMPLEMENTATION".}
 {.compile: "./luigi/source/luigi.c".}
 

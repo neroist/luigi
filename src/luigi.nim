@@ -275,7 +275,7 @@ type
 
   Painter* {.bycopy.} = object
     clip*: Rectangle
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     when defined(lDebug):
@@ -337,7 +337,7 @@ type
     id*: uint32
     parent*: ptr Element
     next*: ptr Element
-    children*: ptr Element
+    children*: ptr UncheckedArray[Element]
     window*: ptr Window
     bounds*: Rectangle
     clip*: Rectangle
@@ -352,11 +352,11 @@ type
   Window* {.bycopy.} = object
     e*: Element
     dialog*: ptr Element
-    shortcuts*: ptr Shortcut
+    shortcuts*: ptr UncheckedArray[Shortcut]
     shortcutCount*: csize_t
     shortcutAllocated*: csize_t
     scale*: cfloat
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     next*: ptr Window
@@ -445,7 +445,7 @@ type
   Code* {.bycopy.} = object
     e*: Element
     vScroll*: ptr ScrollBar
-    lines*: ptr CodeLine
+    lines*: ptr UncheckedArray[CodeLine]
     font*: ptr Font
     lineCount*: cint
     focused*: cint
@@ -469,7 +469,7 @@ type
 
   Textbox* {.bycopy.} = object
     e*: Element
-    string*: cstring
+    `string`*: cstring
     bytes*: pointer # cint
     carets*: array[2, cint]
     scroll*: cint
@@ -531,7 +531,7 @@ type
     e*: Element
 
   UI* {.bycopy.} = object
-    windows*: ptr Window
+    windows*: ptr UncheckedArray[Window]
     animating*: ptr Element
     theme*: Theme
     parentStack*: array[16, ptr Element]

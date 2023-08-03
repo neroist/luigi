@@ -1,5 +1,5 @@
 when defined(lFreetype):
-  import freetype/freetype
+  import freetype
 
 when defined(windows):
   when defined(vcc):

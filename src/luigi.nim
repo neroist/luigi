@@ -1,6 +1,5 @@
 when defined(lFreetype):
-  import freetype/freetype
-  import freetype/ftimage
+  import freetype
 
 when defined(windows):
   when defined(vcc):
@@ -748,4 +747,4 @@ template KEYCODE_DIGIT*(x: untyped): cint = cint(KEYCODE_0 + int(x) - int'0')
 template KEYCODE_FKEY*(x: untyped): cint = cint(KEYCODE_F1 + int(x) - 1)
 
 when defined(lFreetype):
-  export freetype, ftimage
+  export freetype

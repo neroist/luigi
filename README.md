@@ -1,6 +1,6 @@
 # luigi
 
-Nim bindings for the barebones single-header GUI library for Win32, X11, and[Essence](https://gitlab.com/nakst/essence): [Luigi](https://github.com/nakst/luigi). Please do note that while Win32 and X11 have been tested, Essence has not, so it might not work using this library.
+Nim bindings for the barebones single-header GUI library for Win32, X11, and [Essence](https://gitlab.com/nakst/essence): [Luigi](https://github.com/nakst/luigi). Please do note that while Win32 and X11 have been tested, Essence has not, so it might not work using this library.
 
 ## Current State of the Bindings
 

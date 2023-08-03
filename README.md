@@ -19,7 +19,6 @@ nimble install luigi
 
 ```
 
-
 ## Documenation
 
 As for right now, you can read Luigi's README [here](https://github.com/nakst/luigi/tree/main#readme) as for how to get started. The function names are generally the same with the "`UI`" prefix removed. Also, there's a few examples in the [`examples/`](examples/) directory.

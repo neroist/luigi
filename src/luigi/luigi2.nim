@@ -268,7 +268,7 @@ type
 
   Painter* {.bycopy.} = object
     clip*: Rectangle
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     when defined(l2Debug):
@@ -326,7 +326,7 @@ type
     childCount*: uint32
     unused0*: uint32
     parent*: ptr Element
-    children*: ptr ptr Element
+    children*: ptr UncheckedArray[ptr Element]
     window*: ptr Window
     bounds*: Rectangle
     clip*: Rectangle
@@ -341,11 +341,11 @@ type
   Window* {.bycopy.} = object
     e*: Element
     dialog*: ptr Element
-    shortcuts*: ptr Shortcut
+    shortcuts*: ptr UncheckedArray[Shortcut]
     shortcutCount*: csize_t
     shortcutAllocated*: csize_t
     scale*: cfloat
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     next*: ptr Window
@@ -433,7 +433,7 @@ type
   Code* {.bycopy.} = object
     e*: Element
     vScroll*: ptr ScrollBar
-    lines*: ptr CodeLine
+    lines*: ptr UncheckedArray[CodeLine]
     font*: ptr Font
     lineCount*: cint
     focused*: cint
@@ -451,7 +451,7 @@ type
     vScroll*: ptr ScrollBar
     itemCount*: cint
     columns*: cstring
-    columnWidths*: ptr cint
+    columnWidths*: ptr UncheckedArray[cint]
     columnCount*: cint
     columnHighlight*: cint
 
@@ -496,7 +496,7 @@ type
 
   ImageDisplay* {.bycopy.} = object
     e*: Element
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     panX*: cfloat
@@ -516,9 +516,9 @@ type
     active*: ptr Element
 
   UI* {.bycopy.} = object
-    windows*: ptr Window
+    windows*: ptr UncheckedArray[Window]
     theme*: Theme
-    animating*: ptr ptr Element
+    animating*: ptr UncheckedArray[ptr Element] # maybe unchecked?
     animatingCount*: uint32
     parentStack*: array[16, ptr Element]
     parentStackCount*: cint

@@ -1,0 +1,11 @@
+# IDE stuff
+.vscode
+
+# Binaries
+.exe
+.dll
+.lib
+.a
+
+# Generated files
+.out

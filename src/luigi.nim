@@ -602,8 +602,8 @@ proc imageDisplayCreate*(parent: ptr Element; flags: uint32 = 0; bits: ptr uint3
 proc imageDisplaySetContent*(display: ptr ImageDisplay; bits: ptr uint32;
                             width: csize_t; height: csize_t; stride: csize_t) {.cdecl,
     importc: "UIImageDisplaySetContent".}
-proc windowCreate*(owner: ptr Window; flags: uint32 = 0; cTitle: cstring; width: cint;
-                  height: cint): ptr Window {.cdecl, importc: "UIWindowCreate".}
+proc windowCreate*(owner: ptr Window; flags: uint32 = 0; cTitle: cstring; width: cint = 0;
+                  height: cint = 0): ptr Window {.cdecl, importc: "UIWindowCreate".}
 proc windowRegisterShortcut*(window: ptr Window; shortcut: Shortcut) {.cdecl,
     importc: "UIWindowRegisterShortcut".}
 proc windowPostMessage*(window: ptr Window; message: Message; dp: pointer) {.cdecl,

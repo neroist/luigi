@@ -4,31 +4,6 @@ import luigi/luigi2
 proc snprintf*(s: cstring, maxlen: csize_t, format: cstring): cint {.importc,
     header: "<stdio.h>", varargs.}
 
-const
-  themeItems = [
-    "panel1",
-    "panel2",
-    "selected",
-    "border",
-    "text",
-    "textDisabled",
-    "textSelected",
-    "buttonNormal",
-    "buttonHovered",
-    "buttonPressed",
-    "buttonDisabled",
-    "textboxNormal",
-    "textboxFocused",
-    "codeFocused",
-    "codeBackground",
-    "codeDefault",
-    "codeComment",
-    "codeString",
-    "codeNumber",
-    "codeOperator",
-    "codePreprocessor",
-  ]
-
 var
   window: ptr Window
   label: ptr Label

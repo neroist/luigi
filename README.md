@@ -1,6 +1,6 @@
 # luigi
 
-Nim bindings for the barebones single-header GUI library for Win32, X11 and [Essence](https://gitlab.com/nakst/essence), [Luigi](https://github.com/nakst/luigi). Please do note that while Win32 and X11 have been tested, Essence has not, so it might not work using this library.
+Nim bindings for the barebones single-header GUI library for Win32, X11, and[Essence](https://gitlab.com/nakst/essence): [Luigi](https://github.com/nakst/luigi). Please do note that while Win32 and X11 have been tested, Essence has not, so it might not work using this library.
 
 ## Current State of the Bindings
 
@@ -15,15 +15,14 @@ Also Freetype support is currently being worked on; it doesn't work right now ou
 You can install via nimble:
 
 ```sh
-nimble install https://github.com/neroist/luigi
+nimble install luigi
 
 ```
 
-*(if this gets added to nimble, this will change)*
 
 ## Documenation
 
-As for right now, you can read Luigi's README [here](https://github.com/nakst/luigi/tree/main#readme) as for how to get started. The function names are generally the same with the "`UI`" prefix removed. Also, there's a simple example in the [`examples/`](examples/) directory.
+As for right now, you can read Luigi's README [here](https://github.com/nakst/luigi/tree/main#readme) as for how to get started. The function names are generally the same with the "`UI`" prefix removed. Also, there's a few examples in the [`examples/`](examples/) directory.
 
 Also, side note, if you ever need to enter any data where it would be of the type `ptrdiff_t` in C (generally found on text-related funcs, usually called `bytes` or something similar), **enter a integer cast to a pointer.**
 

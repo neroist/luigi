@@ -528,10 +528,10 @@ type
     dialogCanExit*: bool
     activeFont*: ptr Font
     when defined(lDebug):
-      inspector*: ptr UIWindow
-      inspectorTable*: ptr UITable
-      inspectorTarget*: ptr UIWindow
-      inspectorLog*: ptr UICode
+      inspector*: ptr Window
+      inspectorTable*: ptr Table
+      inspectorTarget*: ptr Window
+      inspectorLog*: ptr Code
     when defined(lFreetype):
       ft*: FT_Library
 

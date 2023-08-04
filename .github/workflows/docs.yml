@@ -4,7 +4,7 @@ run-name: Generate documentation
 on: 
   push:
     branches:
-      - "main"
+      - "master"
     paths:
       - "src/luigi.nim"
       - "src/luigi/luigi2.nim"

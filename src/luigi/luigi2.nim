@@ -7,6 +7,9 @@ when defined(windows):
     {.link: "user32.lib".}
     {.link: "gdi32.lib".}
   else:
+    when defined(clang):
+      {.passL: "-lshell32".}
+
     {.passL: "-luser32".}
     {.passL: "-lgdi32".}
 

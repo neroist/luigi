@@ -160,7 +160,7 @@ block:
   let tabPane = tabPaneCreate(addr splitBottomLeftright.e, 0, "Tab 1\tMiddle Tab\tTab 3")
 
   let table = tableCreate(addr tabPane.e, 0, "Column 1\tColumn 2")
-  table.itemCount = 100000
+  table.itemCount = 10000
   table.e.messageUser = tblMessage
   tableResizeColumns(table)
 

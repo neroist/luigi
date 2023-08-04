@@ -629,7 +629,6 @@ proc textboxMoveCaret*(textbox: ptr Textbox; backward: bool; word: bool) {.cdecl
     importc: "UITextboxMoveCaret".}
 proc textboxToCString*(textbox: ptr Textbox): cstring {.cdecl,
     importc: "UITextboxToCString".}
-##  Free with UI_FREE.
 
 proc tableCreate*(parent: ptr Element; flags: uint32 = 0; columns: cstring): ptr Table {.
     cdecl, importc: "UITableCreate".}

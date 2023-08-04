@@ -3,6 +3,7 @@ when defined(lFreetype):
 
 when defined(windows):
   when defined(vcc):
+    {.link: "shell32.lib".}
     {.link: "user32.lib".}
     {.link: "gdi32.lib".}
   else:

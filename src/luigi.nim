@@ -20,7 +20,7 @@ elif defined(linux):
 
   {.passC: "-DUI_LINUX".}
 else:
-  {.error: "Only Linux and Windows are supported by luigi.".}
+  {.error: "Only Linux, Windows, and Essence are supported by luigi.".}
 
 when defined(lFreetype):
   {.passC: "-DUI_FREETYPE".}

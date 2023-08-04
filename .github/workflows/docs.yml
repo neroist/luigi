@@ -33,6 +33,9 @@ jobs:
           nim doc src/luigi
           nim doc src/luigi/luigi2
 
+          cd docs
+          cp luigi.html index.html
+
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v3

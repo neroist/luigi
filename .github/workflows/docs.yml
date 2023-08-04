@@ -30,8 +30,8 @@ jobs:
 
       - name: Generate documentation
         run: |
-          nimble doc src/luigi
-          nimble doc src/luigi/luigi2
+          nim doc src/luigi
+          nim doc src/luigi/luigi2
 
       - name: Deploy to GitHub Pages
         if: success()

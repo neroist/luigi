@@ -264,4 +264,6 @@ block:
   let child3 = mdiChildCreate(addr client.e, MDI_CHILD_CLOSE_BUTTON, Rectangle(l: 70, r: 670, t: 70, b: 470), "Third Window")
   discard buttonCreate(addr child3.e, 0, "giant button!!")
 
+ui.theme.codePreprocessor = ui.theme.codeComment
+
 quit messageLoop()

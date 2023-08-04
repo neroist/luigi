@@ -557,7 +557,6 @@ type
     when defined(lFreetype):
       ft*: FT_Library
 
-
 var ui* {.importc: "ui".}: UI
 
 const castInt* = cast[pointer](-1)

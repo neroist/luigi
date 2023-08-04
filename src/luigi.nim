@@ -20,6 +20,12 @@ else:
 
 when defined(lFreetype):
   {.passC: "-DUI_FREETYPE".}
+  {.passC: "-I" & currentSourcePath() & "/../luigi/source/freetype".}
+  
+  when not defined(vcc):
+    {.passL: "-lfreetype".} 
+  else:
+    {.link: "freetype.lib".}
 
 when defined(lDebug):
   {.passC: "-DUI_DEBUG".}

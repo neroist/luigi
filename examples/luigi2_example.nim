@@ -16,6 +16,8 @@ var
   gaugeVert1: ptr Gauge
   gaugeVert2: ptr Gauge
 
+  code: ptr Code
+
   selected: int
 
 proc btnMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
@@ -36,6 +38,13 @@ proc btn2Message(element: ptr Element, message: Message, di: cint, dp: pointer):
     menuAddItem(menu, 0, "Item 1\tCtrl+F5", castInt, menuCallback, cast[pointer](cstring"Item 1 clicked!"))
     menuAddItem(menu, 0, "Item 1\tF6", castInt, menuCallback, cast[pointer](cstring"Item 2 clicked!"))
     menuShow(menu)
+
+# NEW
+proc codeMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
+  if message == msgMouseMove:
+    let lineno = codeHitTest(code, element.window.cursorX, element.window.cursorY)
+
+    codeFocusLine(code, lineno)
 
 proc sliderHMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgValueChanged:
@@ -134,9 +143,10 @@ block:
 block:
   # Top-Right pane.
 
-  let
-    code = codeCreate(addr splitTopLeftright.e)
-    buffer = cstring readFile("../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = cstring readFile("../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
+
+  code = codeCreate(addr splitTopLeftright.e)
+  code.e.messageUser = codeMessage
 
   codeInsertContent(code, buffer, cast[pointer](cint buffer.len), true)
   codeFocusLine(code, 0)
@@ -169,7 +179,7 @@ block:
 
 # windowRegisterShortcut(window):
 #   Shortcut(
-#     code: KEYCODE_LETTER('t'),
+#     code: KEYCODE_LETTER('T'),
 #     ctrl: true,
 #     shift: false,
 #     alt: false,

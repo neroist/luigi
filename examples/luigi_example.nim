@@ -195,7 +195,7 @@ block:
   let buffer = readFile("../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
   
   code = codeCreate(addr split3.e)
-    buffer = readFile("../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+  code.e.messageUser = codeMessage
 
   codeInsertContent(code, cstring buffer, cast[pointer](cint buffer.len), true)
   codeFocusLine(code, 0)

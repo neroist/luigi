@@ -319,11 +319,9 @@ type
 
   CodeDecorateLine* {.bycopy.} = object
     bounds*: Rectangle
-    index*: cint
-    ##  Starting at 1!
+    index*: cint  ##  Starting at 1!
     x*: cint
-    y*: cint
-    ##  Position where additional text can be drawn.
+    y*: cint ##  Position where additional text can be drawn.
     painter*: ptr Painter
 
   FindByPoint* {.bycopy.} = object
@@ -332,8 +330,7 @@ type
     result*: ptr Element
 
   Element* {.bycopy.} = object
-    flags*: uint32
-    ##  First 16 bits are element specific.
+    flags*: uint32 ##  First 16 bits are element specific.
     id*: uint32
     parent*: ptr Element
     next*: ptr Element
@@ -341,8 +338,7 @@ type
     window*: ptr Window
     bounds*: Rectangle
     clip*: Rectangle
-    cp*: pointer
-    ##  Context pointer (for user).
+    cp*: pointer ##  Context pointer (for user).
     messageClass*: proc (element: ptr Element; message: Message; di: cint; dp: pointer): cint {.
         cdecl.}
     messageUser*: proc (element: ptr Element; message: Message; di: cint; dp: pointer): cint {.
@@ -368,9 +364,9 @@ type
     cursorX*: cint
     cursorY*: cint
     cursorStyle*: cint
+    textboxModifiedFlag*: bool ## \
     ##  Set when a textbox is modified.
     ##  Useful for tracking whether changes to the loaded document have been saved.
-    textboxModifiedFlag*: bool
     ctrl*: bool
     shift*: bool
     alt*: bool
@@ -515,13 +511,14 @@ type
 
   ImageDisplay* {.bycopy.} = object
     e*: Element
-    bits*: ptr uint32
+    bits*: ptr UncheckedArray[uint32]
     width*: cint
     height*: cint
     panX*: cfloat
     panY*: cfloat
     zoom*: cfloat
-    ##  Internals:
+
+    #  Internals:
     previousWidth*: cint
     previousHeight*: cint
     previousPanPointX*: cint
@@ -608,10 +605,10 @@ proc windowRegisterShortcut*(window: ptr Window; shortcut: Shortcut) {.cdecl,
     importc: "UIWindowRegisterShortcut".}
 proc windowPostMessage*(window: ptr Window; message: Message; dp: pointer) {.cdecl,
     importc: "UIWindowPostMessage".}
-##  Thread-safe.
+  ##  Thread-safe.
 
 proc windowPack*(window: ptr Window; width: cint) {.cdecl, importc: "UIWindowPack".}
-##  Change the size of the window to best match its contents.
+  ##  Change the size of the window to best match its contents.
 
 type
   DialogUserCallback* = proc (a1: ptr Element) {.cdecl.}
@@ -636,25 +633,25 @@ proc tableCreate*(parent: ptr Element; flags: uint32 = 0; columns: cstring): ptr
     cdecl, importc: "UITableCreate".}
 proc tableHitTest*(table: ptr Table; x: cint; y: cint): cint {.cdecl,
     importc: "UITableHitTest".}
-##  Returns item index. Returns -1 if not on an item.
+  ##  Returns item index. Returns -1 if not on an item.
 
 proc tableHeaderHitTest*(table: ptr Table; x: cint; y: cint): cint {.cdecl,
     importc: "UITableHeaderHitTest".}
-##  Returns column index or -1.
+  ##  Returns column index or -1.
 
 proc tableEnsureVisible*(table: ptr Table; index: cint): bool {.cdecl,
     importc: "UITableEnsureVisible".}
-##  Returns false if the item was already visible.
+  ##  Returns false if the item was already visible.
 
 proc tableResizeColumns*(table: ptr Table) {.cdecl, importc: "UITableResizeColumns".}
 proc codeCreate*(parent: ptr Element; flags: uint32 = 0): ptr Code {.cdecl,
     importc: "UICodeCreate".}
 proc codeFocusLine*(code: ptr Code; index: cint) {.cdecl, importc: "UICodeFocusLine".}
-##  Line numbers are 1-indexed!!
+  ##  Line numbers are 1-indexed!!
 
 proc codeHitTest*(code: ptr Code; x: cint; y: cint): cint {.cdecl,
     importc: "UICodeHitTest".}
-##  Returns line number; negates if in margin. Returns 0 if not on a line.
+  ##  Returns line number; negates if in margin. Returns 0 if not on a line.
 
 proc codeInsertContent*(code: ptr Code; content: cstring; byteCount: pointer = castInt;
                        replace: bool) {.cdecl, importc: "UICodeInsertContent".}
@@ -664,7 +661,7 @@ proc drawInvert*(painter: ptr Painter; rectangle: Rectangle) {.cdecl,
     importc: "UIDrawInvert".}
 proc drawLine*(painter: ptr Painter; x0: cint; y0: cint; x1: cint; y1: cint; color: uint32): bool {.
     cdecl, importc: "UIDrawLine".}
-##  Returns false if the line was not visible.
+  ##  Returns false if the line was not visible.
 
 proc drawTriangle*(painter: ptr Painter; x0: cint; y0: cint; x1: cint; y1: cint; x2: cint;
                   y2: cint; color: uint32) {.cdecl, importc: "UIDrawTriangle".}
@@ -688,7 +685,7 @@ proc measureStringWidth*(string: cstring; bytes: pointer = castInt): cint {.cdec
     importc: "UIMeasureStringWidth".}
 proc measureStringHeight*(): cint {.cdecl, importc: "UIMeasureStringHeight".}
 proc animateClock*(): uint64 {.cdecl, importc: "UIAnimateClock".}
-##  In ms.
+  ##  In ms.
 
 proc elementAnimate*(element: ptr Element; stop: bool): bool {.cdecl,
     importc: "UIElementAnimate".}
@@ -700,7 +697,7 @@ proc elementFindByPoint*(element: ptr Element; x: cint; y: cint): ptr Element {.
 proc elementFocus*(element: ptr Element) {.cdecl, importc: "UIElementFocus".}
 proc elementScreenBounds*(element: ptr Element): Rectangle {.cdecl,
     importc: "UIElementScreenBounds".}
-##  Returns bounds of element in same coordinate system as used by UIWindowCreate.
+  ##  Returns bounds of element in same coordinate system as used by UIWindowCreate.
 
 proc elementRefresh*(element: ptr Element) {.cdecl, importc: "UIElementRefresh".}
 proc elementRepaint*(element: ptr Element; region: ptr Rectangle) {.cdecl,
@@ -712,7 +709,7 @@ proc elementMessage*(element: ptr Element; message: Message; di: cint; dp: point
 proc elementChangeParent*(element: ptr Element; newParent: ptr Element;
                          insertBefore: ptr Element) {.cdecl,
     importc: "UIElementChangeParent".}
-##  Set insertBefore to null to insert at the end.
+  ##  Set insertBefore to null to insert at the end.
 
 proc parentPush*(element: ptr Element): ptr Element {.cdecl, importc: "UIParentPush".}
 proc parentPop*(): ptr Element {.cdecl, importc: "UIParentPop".}
@@ -737,7 +734,7 @@ proc stringCopy*(`in`: cstring; inBytes: pointer = castInt): cstring {.cdecl,
 proc fontCreate*(cPath: cstring; size: uint32): ptr Font {.cdecl,
     importc: "UIFontCreate".}
 proc fontActivate*(font: ptr Font): ptr Font {.cdecl, importc: "UIFontActivate".}
-##  Returns the previously active font.
+  ##  Returns the previously active font.
 
 when defined(lDebug):
   proc InspectorLog*(cFormat: cstring) {.varargs, cdecl, importc: "UIInspectorLog".}

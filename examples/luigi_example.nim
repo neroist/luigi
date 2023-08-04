@@ -85,7 +85,7 @@ proc teTableMessage(element: ptr Element, message: Message, di: cint, dp: pointe
       addr themeEditorColorPicker.value
     )
 
-    elementRepaint(addr themeEditorColorPicker.e, nil)
+    elementRepaint(addr themeEditorColorPicker.e)
 
 proc teColorPickerMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgValueChanged:
@@ -116,8 +116,8 @@ proc teColorPickerMessage(element: ptr Element, message: Message, di: cint, dp: 
       of 20: addr ui.theme.codePreprocessor
       else: addr ui.theme.panel1
     
-    elementRepaint(addr window.e, nil)
-    elementRepaint(addr element.window.e, nil)
+    elementRepaint(addr window.e)
+    elementRepaint(addr element.window.e)
 
 proc btnMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgClicked:
@@ -154,7 +154,7 @@ proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): 
       selected = hit
 
       if not tableEnsureVisible(cast[ptr Table](element), cint selected):
-        elementRepaint(element, nil)
+        elementRepaint(element)
 
 initialise()
 

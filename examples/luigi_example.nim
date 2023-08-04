@@ -7,7 +7,7 @@ proc snprintf*(s: cstring, maxlen: csize_t, format: cstring): cint {.importc,
     header: "<stdio.h>", varargs.}
 
 const
-  themeItems = [
+  themeItems = [ 
     "panel1",
     "panel2",
     "selected",
@@ -33,6 +33,7 @@ const
 
 var
   window: ptr Window
+  testWindow: ptr Window
   label: ptr Label
 
   themeEditorColorPicker: ptr ColorPicker
@@ -120,6 +121,7 @@ proc teColorPickerMessage(element: ptr Element, message: Message, di: cint, dp: 
     
     elementRepaint(addr window.e)
     elementRepaint(addr element.window.e)
+    elementRepaint(addr testWindow.e)
 
 proc btnMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgClicked:
@@ -169,6 +171,7 @@ proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): 
 initialise()
 
 window = windowCreate(nil, 0, "Test Window")
+testWindow = window
 
 let
   # Split window (vertically) into top/bottom panes.

@@ -42,16 +42,16 @@ proc sliderHMessage(element: ptr Element, message: Message, di: cint, dp: pointe
     gaugeHoriz2.position = sliderHoriz.position
     gaugeVert1.position = sliderHoriz.position
 
-    elementRepaint(addr gaugeHoriz2.e, nil)
-    elementRepaint(addr gaugeVert1.e, nil)
+    elementRepaint(addr gaugeHoriz2.e)
+    elementRepaint(addr gaugeVert1.e)
 
 proc sliderVMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgValueChanged:
     gaugeVert2.position = sliderVert.position
     gaugeHoriz1.position = sliderVert.position
 
-    elementRepaint(addr gaugeVert2.e, nil)
-    elementRepaint(addr gaugeHoriz1.e, nil)
+    elementRepaint(addr gaugeVert2.e)
+    elementRepaint(addr gaugeHoriz1.e)
 
 proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgTableGetItem:
@@ -69,7 +69,7 @@ proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): 
       selected = hit
 
       if not tableEnsureVisible(cast[ptr Table](element), cint selected):
-        elementRepaint(element, nil)
+        elementRepaint(element)
 
 initialise()
 

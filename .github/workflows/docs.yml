@@ -12,6 +12,7 @@ on:
       - "luigi.nimble"
 
       - ".github/workflows/**"
+  workflow_dispatch:
 
 jobs:
   generate-doc:

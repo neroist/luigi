@@ -38,6 +38,8 @@ var
   themeEditorColorPicker: ptr ColorPicker
   themeEditorTable: ptr Table
 
+  code: ptr Code
+
   themeEditorSelectedColor: int = -1
   selected: int
 
@@ -138,6 +140,14 @@ proc btn2Message(element: ptr Element, message: Message, di: cint, dp: pointer):
     menuAddItem(menu, 0, "Item 1\tF6", castInt, menuCallback, cast[pointer](cstring"Item 2 clicked!"))
     menuShow(menu)
 
+# NEW
+proc codeMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
+  if message == msgMouseMove:
+    let lineno = codeHitTest(code, element.window.cursorX, element.window.cursorY)
+
+    codeFocusLine(code, lineno)
+    elementRepaint(element)
+
 proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgTableGetItem:
     var m = cast[ptr TableGetItem](dp)
@@ -182,8 +192,9 @@ block:
   discard textboxCreate(addr panel.e)
 
 block:
-  let
-    code = codeCreate(addr split3.e)
+  let buffer = readFile("../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+  
+  code = codeCreate(addr split3.e)
     buffer = readFile("../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
 
   codeInsertContent(code, cstring buffer, cast[pointer](cint buffer.len), true)

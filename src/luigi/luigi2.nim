@@ -19,6 +19,8 @@ elif defined(linux):
   {.passL: "-lm".}
 
   {.passC: "-DUI_LINUX".}
+elif defined(essence):
+  discard  # so it doesnt go to the `else` branch
 else:
   {.error: "Only Linux, Windows, and Essence are supported by luigi.".}
 

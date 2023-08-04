@@ -309,7 +309,7 @@ type
       glyphOffsetsY*: array[128, cint]
 
   Shortcut* {.bycopy.} = object
-    code*: cint # intptr_t
+    code*: cint #! intptr_t, WRONG TYPE
     ctrl*: bool
     shift*: bool
     alt*: bool
@@ -324,7 +324,7 @@ type
   KeyTyped* {.bycopy.} = object
     text*: cstring
     textBytes*: cint
-    code*: cint # intptr_t
+    code*: cint #! intptr_t, WRONG TYPE
 
   TableGetItem* {.bycopy.} = object
     buffer*: cstring
@@ -411,20 +411,20 @@ type
   Button* {.bycopy.} = object
     e*: Element
     label*: cstring
-    labelBytes*: pointer # cint
+    #labelBytes*: pointer # cint
     invoke*: proc (cp: pointer) {.cdecl.}
 
   Checkbox* {.bycopy.} = object
     e*: Element
     check*: uint8
     label*: cstring
-    labelBytes*: pointer # cint
+    #labelBytes*: pointer # cint
     invoke*: proc (cp: pointer) {.cdecl.}
 
   Label* {.bycopy.} = object
     e*: Element
     label*: cstring
-    labelBytes*: pointer # cint
+    #labelBytes*: pointer # cint
 
   Spacer* {.bycopy.} = object
     e*: Element
@@ -482,7 +482,7 @@ type
   Textbox* {.bycopy.} = object
     e*: Element
     `string`*: cstring
-    bytes*: pointer # cint
+    #bytes*: pointer # cint
     carets*: array[2, cint]
     scroll*: cint
     rejectNextKey*: bool
@@ -514,7 +514,7 @@ type
     e*: Element
     bounds*: Rectangle
     title*: cstring
-    titleBytes*: pointer # cint
+    #titleBytes*: pointer # cint
     dragHitTest*: cint
     dragOffset*: Rectangle
     previous*: ptr MDIChild

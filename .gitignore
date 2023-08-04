@@ -9,6 +9,8 @@
 
 # Generated files
 *.out
+*.ilk
+*.pdb
 
 # freetype headers
 src/luigi/source/freetype

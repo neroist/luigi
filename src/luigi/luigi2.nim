@@ -28,10 +28,14 @@ when defined(lFreetype):
   {.passC: "-DUI_FREETYPE".}
   {.passC: "-I" & currentSourcePath() & "/../source/freetype".}
 
-  when not defined(vcc):
-    {.passL: "-lfreetype".}
-  else:
-    {.link: "freetype.lib".}
+  when not defined(freetypeStatic):
+    {.error: "Please use -d:freetypeStatic when compiling".}
+
+    # if you still dont want to define it... (for some reason)
+    when not defined(vcc):
+      {.passL: "-lfreetype".} 
+    else:
+      {.link: "freetype.lib".}
 
 when defined(lDebug):
   {.passC: "-DUI_DEBUG".}

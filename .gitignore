@@ -2,10 +2,13 @@
 .vscode
 
 # Binaries
-.exe
-.dll
-.lib
-.a
+*.exe
+*.dll
+*.lib
+*.a
 
 # Generated files
-.out
+*.out
+
+# freetype headers
+src/luigi/source/freetype

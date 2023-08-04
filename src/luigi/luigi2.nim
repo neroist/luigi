@@ -730,7 +730,7 @@ proc elementScreenBounds*(element: ptr Element): Rectangle {.cdecl,
 
 proc elementRefresh*(element: ptr Element) {.cdecl, importc: "UIElementRefresh".}
 proc elementRelayout*(element: ptr Element) {.cdecl, importc: "UIElementRelayout".}
-proc elementRepaint*(element: ptr Element; region: ptr Rectangle) {.cdecl,
+proc elementRepaint*(element: ptr Element; region: ptr Rectangle = nil) {.cdecl,
     importc: "UIElementRepaint".}
 proc elementMeasurementsChanged*(element: ptr Element; which: cint) {.cdecl,
     importc: "UIElementMeasurementsChanged".}

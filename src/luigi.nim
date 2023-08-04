@@ -715,7 +715,7 @@ proc elementScreenBounds*(element: ptr Element): Rectangle {.cdecl,
   ##  Returns bounds of element in same coordinate system as used by UIWindowCreate.
 
 proc elementRefresh*(element: ptr Element) {.cdecl, importc: "UIElementRefresh".}
-proc elementRepaint*(element: ptr Element; region: ptr Rectangle) {.cdecl,
+proc elementRepaint*(element: ptr Element; region: ptr Rectangle = nil) {.cdecl,
     importc: "UIElementRepaint".}
 proc elementMove*(element: ptr Element; bounds: Rectangle; alwaysLayout: bool) {.cdecl,
     importc: "UIElementMove".}

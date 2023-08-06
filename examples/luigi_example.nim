@@ -212,7 +212,7 @@ block:
   discard textboxCreate(addr panel.e)
 
 block:
-  let buffer = readFile("../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = readFile(currentSourcePath() & "/../../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
   
   code = codeCreate(addr split3.e)
   code.e.messageUser = codeMessage

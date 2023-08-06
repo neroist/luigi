@@ -157,7 +157,7 @@ block:
 block:
   # Top-Right pane.
 
-  let buffer = cstring readFile("../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = cstring readFile(currentSourcePath() & "/../../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
 
   code = codeCreate(addr splitTopLeftright.e)
   code.e.messageUser = codeMessage

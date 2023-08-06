@@ -303,4 +303,17 @@ ui.theme.codePreprocessor = ui.theme.codeComment
 
 echo "Tip: Try dragging a text file on the test window."
 
+# wanna try out different fonts?
+when defined(lFreetype):
+  # looks similar but this is the undertale font !!!
+  # pretty cool ngl :3
+  # let determinationSans = fontCreate("./DeterminationSansWebRegular-369X.ttf", 14)
+  # fontActivate(determinationSans)
+  
+  let robotoMono = fontCreate("./RobotoMono-VariableFont_wght.ttf", 11) 
+  let firaCode = fontCreate("./FiraCode-Retina.ttf", 10)
+
+  fontActivate(robotoMono)
+  code.font = firaCode
+
 quit messageLoop()

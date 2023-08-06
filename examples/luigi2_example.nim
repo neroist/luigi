@@ -225,4 +225,12 @@ block:
 
 echo "Tip: Try dragging a text file on the test window."
 
+# wanna try out different fonts?
+when defined(lFreetype):
+  let robotoMono = fontCreate("./RobotoMono-VariableFont_wght.ttf", 11) 
+  let firaCode = fontCreate("./FiraCode-Retina.ttf", 10)
+
+  fontActivate(robotoMono)
+  code.font = firaCode
+
 quit messageLoop()

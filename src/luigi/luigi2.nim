@@ -762,7 +762,7 @@ proc rectangleEquals*(a: Rectangle; b: Rectangle): bool {.cdecl,
 proc rectangleContains*(a: Rectangle; x: cint; y: cint): bool {.cdecl,
     importc: "UIRectangleContains".}
 proc colorToHSV*(rgb: uint32; hue: ptr cfloat; saturation: ptr cfloat; value: ptr cfloat): bool {.
-    cdecl, importc: "UIColorToHSV".}
+    cdecl, importc: "UIColorToHSV", discardable.}
 proc colorToRGB*(hue: cfloat; saturation: cfloat; value: cfloat; rgb: ptr uint32) {.
     cdecl, importc: "UIColorToRGB".}
 proc stringCopy*(`in`: cstring; inBytes: pointer = castInt): cstring {.cdecl,

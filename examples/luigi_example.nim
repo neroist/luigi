@@ -82,7 +82,7 @@ proc teTableMessage(element: ptr Element, message: Message, di: cint, dp: pointe
   elif message == msgLeftDown:
     themeEditorSelectedColor = tableHitTest(cast[ptr Table](element), element.window.cursorX, element.window.cursorY)
 
-    discard colorToHSV(
+    colorToHSV(
       getValOfTheme(themeEditorSelectedColor),
       addr themeEditorColorPicker.hue,
       addr themeEditorColorPicker.saturation,

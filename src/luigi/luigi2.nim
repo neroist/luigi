@@ -779,5 +779,23 @@ template KEYCODE_LETTER*(x: untyped): cint = cint(KEYCODE_A + int(x) - int'A')
 template KEYCODE_DIGIT*(x: untyped): cint = cint(KEYCODE_0 + int(x) - int'0')
 template KEYCODE_FKEY*(x: untyped): cint = cint(KEYCODE_F1 + int(x) - 1)
 
+template RECT_1*(x: cint): Rectangle = Rectangle(l: x, r: x, t: x, b: x)
+template RECT_1I*(x): Rectangle = Rectangle(l: x, r: -x, t: x, b: -x)
+template RECT_2*(x, y: cint): Rectangle = Rectangle(l: x, r: x, t: y, b: y)
+template RECT_2I*(x, y: cint): Rectangle = Rectangle(l: x, r: -x, t: y, b: -y)
+template RECT_2S*(x, y: cint): Rectangle = Rectangle(l: 0, r: x, t: 0, b: y)
+template RECT_4*(x, y, z, w: cint): Rectangle = Rectangle(l: x, r: y, t: z, b: w)
+template RECT_4*(x, y, w, h: cint): Rectangle = Rectangle(l: x, r: (x) + (w), t: y, b: (y) + (h))
+template RECT_WIDTH*(r: Rectangle): cint = r.r - r.l
+template RECT_HEIGHT*(r: Rectangle): cint = r.b - r.t
+template RECT_TOTAL_H*(r: Rectangle): cint = r.r + r.l
+template RECT_TOTAL_V*(r: Rectangle): cint = r.b + r.t
+template RECT_SIZE*(r: Rectangle): tuple[w, h: int] = (RECT_WIDTH(r), RECT_HEIGHT(r))
+template RECT_TOP_LEFT*(r: Rectangle): tuple[l, t: int] = (r.l, r.t)
+template RECT_BOTTOM_LEFT*(r: Rectangle): tuple[l, b: int] = (r.l, r.b)
+template RECT_BOTTOM_RIGHT*(r: Rectangle): tuple[r, b: int] = (r.r, r.b)
+template RECT_ALL*(r: Rectangle): tuple[l, r, t, b: int] = (r.l, r.r, r.t, r.b)
+template RECT_VALID*(r: Rectangle): bool = (r).l < (r).r and (r).t < (r).b
+
 when defined(lFreetype):
   export freetype

@@ -71,8 +71,8 @@ const
   SIZE_SPLITTER* = (8)
   SIZE_SCROLL_BAR* = (16)
   SIZE_SCROLL_MINIMUM_THUMB* = (20)
-  #SIZE_CODE_MARGIN* = (ui.activeFont.glyphWidth * 5)
-  #SIZE_CODE_MARGIN_GAP* = (ui.activeFont.glyphWidth * 1)
+  # SIZE_CODE_MARGIN* = (ui.activeFont.glyphWidth * 5)
+  # SIZE_CODE_MARGIN_GAP* = (ui.activeFont.glyphWidth * 1)
   SIZE_TABLE_HEADER* = (26)
   SIZE_TABLE_COLUMN_GAP* = (20)
   SIZE_TABLE_ROW* = (20)
@@ -227,48 +227,50 @@ const
   KEYCODE_INSERT* = (65379)
   KEYCODE_0* = (48)
 
-type                          ##  General messages.
+type                          
   Message* = enum
-    msgPaint,               ##  dp = pointer to UIPainter
+    ##  General messages.
+
+    msgPaint,              ##  dp = pointer to UIPainter
     msgPaintForeground,    ##  after children have painted
     msgLayout, 
     msgDestroy, 
     msgDeallocate, 
-    msgUpdate, ##  di = UI_UPDATE_... constant
+    msgUpdate,             ##  di = UI_UPDATE_... constant
     msgAnimate, 
     msgScrolled, 
-    msgGetWidth, ##  di = height (if known); return width
+    msgGetWidth,           ##  di = height (if known); return width
     msgGetHeight,          ##  di = width (if known); return height
-    msgGetChildStability, ##  dp = child element; return stable axes, 1 (width) | 2 (height)
-    msgInputEventsStart,  ##  not sent to disabled elements
+    msgGetChildStability,  ##  dp = child element; return stable axes, 1 (width) | 2 (height)
+    msgInputEventsStart,   ##  not sent to disabled elements
     msgLeftDown, 
     msgLeftUp, 
     msgMiddleDown, 
     msgMiddleUp, 
     msgRightDown,
     msgRightUp, 
-    msgKeyTyped, ##  dp = pointer to UIKeyTyped; return 1 if handled
+    msgKeyTyped,           ##  dp = pointer to UIKeyTyped; return 1 if handled
     msgKeyReleased,        ##  dp = pointer to UIKeyTyped; return 1 if handled
     msgMouseMove, 
     msgMouseDrag, 
-    msgMouseWheel, ##  di = delta; return 1 if handled
+    msgMouseWheel,         ##  di = delta; return 1 if handled
     msgClicked, 
-    msgGetCursor, ##  return cursor code
+    msgGetCursor,          ##  return cursor code
     msgPressedDescendent,  ##  dp = pointer to child that is/contains pressed element
-    msgInputEventsEnd,    ##  Specific elements.
+    msgInputEventsEnd,     ##  Specific elements.
     msgValueChanged,       ##  sent to notify that the element's value has changed
-    msgTableGetItem,      ##  dp = pointer to UITableGetItem; return string length
+    msgTableGetItem,       ##  dp = pointer to UITableGetItem; return string length
     msgCodeGetMarginColor, ##  di = line index (starts at 1); return color
-    msgCodeDecorateLine,  ##  dp = pointer to UICodeDecorateLine
-    msgTabSelected, ##  sent to the tab that was selected (not the tab pane itself)
-    msgWindowDropFiles,   ##  di = count, dp = char ** of paths
+    msgCodeDecorateLine,   ##  dp = pointer to UICodeDecorateLine
+    msgTabSelected,        ##  sent to the tab that was selected (not the tab pane itself)
+    msgWindowDropFiles,    ##  di = count, dp = char ** of paths
     msgWindowActivate, 
-    msgWindowClose, ##  return 1 to prevent default (process exit for UIWindow; close for UIMDIChild)
+    msgWindowClose,        ##  return 1 to prevent default (process exit for UIWindow; close for UIMDIChild)
     msgWindowUpdateStart, 
     msgWindowUpdateBeforeDestroy,
     msgWindowUpdateBeforeLayout, 
     msgWindowUpdateBeforePaint, 
-    msgWindowUpdateEnd, ##  User-defined messages.
+    msgWindowUpdateEnd,    ##  User-defined messages.
     msgUser
 
 type

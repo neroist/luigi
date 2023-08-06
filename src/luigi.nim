@@ -748,7 +748,7 @@ proc stringCopy*(`in`: cstring; inBytes: pointer = castInt): cstring {.cdecl,
     importc: "UIStringCopy".}
 proc fontCreate*(cPath: cstring; size: uint32): ptr Font {.cdecl,
     importc: "UIFontCreate".}
-proc fontActivate*(font: ptr Font): ptr Font {.cdecl, importc: "UIFontActivate".}
+proc fontActivate*(font: ptr Font): ptr Font {.cdecl, importc: "UIFontActivate", discardable.}
   ##  Returns the previously active font.
 
 when defined(lDebug):

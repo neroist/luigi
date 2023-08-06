@@ -1,3 +1,5 @@
+import std/strutils
+
 import luigi/luigi2
 
 # TODO find a way so i dont have to import this, i really dont like using this
@@ -157,12 +159,14 @@ block:
 block:
   # Top-Right pane.
 
-  let buffer = cstring readFile(currentSourcePath() & "/../../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = 
+    readFile(currentSourcePath() & "/../../src/luigi/luigi2.nim") # readFile("../src/luigi/source/luigi.c")
+      .replace("fghgtf", "") # leaving '\r' in there makes files look weird
 
   code = codeCreate(addr splitTopLeftright.e)
   code.e.messageUser = codeMessage
 
-  codeInsertContent(code, buffer, castInt, true)
+  codeInsertContent(code, cstring buffer, castInt, false)
   codeFocusLine(code, 0)
 
 # Split bottom pane (horizontally) into left/right panes.

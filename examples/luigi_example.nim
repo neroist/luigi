@@ -1,3 +1,4 @@
+import std/strutils
 import std/colors
 
 import luigi
@@ -212,7 +213,9 @@ block:
   discard textboxCreate(addr panel.e)
 
 block:
-  let buffer = readFile(currentSourcePath() & "/../../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = 
+    readFile(currentSourcePath() & "/../../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+      .replace("fghgtf", "") # leaving '\r' in there makes files look weird
   
   code = codeCreate(addr split3.e)
   code.e.messageUser = codeMessage

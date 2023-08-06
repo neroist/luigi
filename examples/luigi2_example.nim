@@ -62,6 +62,19 @@ proc sliderVMessage(element: ptr Element, message: Message, di: cint, dp: pointe
     elementRepaint(addr gaugeVert2.e)
     elementRepaint(addr gaugeHoriz1.e)
 
+proc winMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
+  if message == msgWindowDropFiles:
+    var paths: seq[cstring]
+
+    # when message == msgWindowDropFiles, `dp` is an UncheckedArray of the file
+    # paths, and `di` is the number of files.
+    for path in cast[ptr UncheckedArray[cstring]](dp).toOpenArray(0, int di - 1):
+      paths.add path
+
+    codeInsertContent(code, cstring readFile($paths[^1]), castInt, true)
+
+    elementRefresh(addr code.e)
+
 proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgTableGetItem:
     var m = cast[ptr TableGetItem](dp)
@@ -83,6 +96,7 @@ proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): 
 initialise()
 
 window = windowCreate(nil, 0, "luigi2 - Example Application")
+window.e.messageUser = winMessage
 
 let
   # Split window (vertically) into top/bottom panes.
@@ -204,5 +218,7 @@ block:
 
   let child3 = mdiChildCreate(addr client.e, MDI_CHILD_CLOSE_BUTTON, Rectangle(l: 70, r: 670, t: 70, b: 470), "Third Window")
   discard buttonCreate(addr child3.e, 0, "giant button!!")
+
+echo "Tip: Try dragging a text file on the test window."
 
 quit messageLoop()

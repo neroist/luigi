@@ -150,6 +150,22 @@ proc codeMessage(element: ptr Element, message: Message, di: cint, dp: pointer):
     codeFocusLine(code, lineno)
     elementRepaint(element)
 
+proc winMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
+  if message == msgWindowDropFiles:
+    var paths: seq[cstring]
+
+    # when message == msgWindowDropFiles, `dp` is an UncheckedArray of the file
+    # paths, and `di` is the number of files.
+
+    # we cast the pointer to an UncheckedArray and convert it to an openArray so
+    # we can iterate over the contents
+    for path in cast[ptr UncheckedArray[cstring]](dp).toOpenArray(0, int di - 1):
+      paths.add path
+
+    codeInsertContent(code, cstring readFile($paths[^1]), castInt, true)
+
+    elementRefresh(addr code.e)
+
 proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgTableGetItem:
     var m = cast[ptr TableGetItem](dp)
@@ -171,6 +187,7 @@ proc tblMessage(element: ptr Element, message: Message, di: cint, dp: pointer): 
 initialise()
 
 window = windowCreate(nil, 0, "Test Window")
+window.e.messageUser = winMessage
 testWindow = window
 
 let
@@ -265,5 +282,7 @@ block:
   discard buttonCreate(addr child3.e, 0, "giant button!!")
 
 ui.theme.codePreprocessor = ui.theme.codeComment
+
+echo "Tip: Try dragging a text file on the test window."
 
 quit messageLoop()

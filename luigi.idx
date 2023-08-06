@@ -1,0 +1,284 @@
+nimTitle	luigi	luigi.html	module luigi		0
+nim	SIZE_BUTTON_MINIMUM_WIDTH	luigi.html#SIZE_BUTTON_MINIMUM_WIDTH	const SIZE_BUTTON_MINIMUM_WIDTH		47
+nim	SIZE_BUTTON_PADDING	luigi.html#SIZE_BUTTON_PADDING	const SIZE_BUTTON_PADDING		48
+nim	SIZE_BUTTON_HEIGHT	luigi.html#SIZE_BUTTON_HEIGHT	const SIZE_BUTTON_HEIGHT		49
+nim	SIZE_BUTTON_CHECKED_AREA	luigi.html#SIZE_BUTTON_CHECKED_AREA	const SIZE_BUTTON_CHECKED_AREA		50
+nim	SIZE_CHECKBOX_BOX	luigi.html#SIZE_CHECKBOX_BOX	const SIZE_CHECKBOX_BOX		52
+nim	SIZE_CHECKBOX_GAP	luigi.html#SIZE_CHECKBOX_GAP	const SIZE_CHECKBOX_GAP		53
+nim	SIZE_MENU_ITEM_HEIGHT	luigi.html#SIZE_MENU_ITEM_HEIGHT	const SIZE_MENU_ITEM_HEIGHT		55
+nim	SIZE_MENU_ITEM_MINIMUM_WIDTH	luigi.html#SIZE_MENU_ITEM_MINIMUM_WIDTH	const SIZE_MENU_ITEM_MINIMUM_WIDTH		56
+nim	SIZE_MENU_ITEM_MARGIN	luigi.html#SIZE_MENU_ITEM_MARGIN	const SIZE_MENU_ITEM_MARGIN		57
+nim	SIZE_GAUGE_WIDTH	luigi.html#SIZE_GAUGE_WIDTH	const SIZE_GAUGE_WIDTH		59
+nim	SIZE_GAUGE_HEIGHT	luigi.html#SIZE_GAUGE_HEIGHT	const SIZE_GAUGE_HEIGHT		60
+nim	SIZE_SLIDER_WIDTH	luigi.html#SIZE_SLIDER_WIDTH	const SIZE_SLIDER_WIDTH		62
+nim	SIZE_SLIDER_HEIGHT	luigi.html#SIZE_SLIDER_HEIGHT	const SIZE_SLIDER_HEIGHT		63
+nim	SIZE_SLIDER_THUMB	luigi.html#SIZE_SLIDER_THUMB	const SIZE_SLIDER_THUMB		64
+nim	SIZE_SLIDER_TRACK	luigi.html#SIZE_SLIDER_TRACK	const SIZE_SLIDER_TRACK		65
+nim	SIZE_TEXTBOX_MARGIN	luigi.html#SIZE_TEXTBOX_MARGIN	const SIZE_TEXTBOX_MARGIN		67
+nim	SIZE_TEXTBOX_WIDTH	luigi.html#SIZE_TEXTBOX_WIDTH	const SIZE_TEXTBOX_WIDTH		68
+nim	SIZE_TEXTBOX_HEIGHT	luigi.html#SIZE_TEXTBOX_HEIGHT	const SIZE_TEXTBOX_HEIGHT		69
+nim	SIZE_TAB_PANE_SPACE_TOP	luigi.html#SIZE_TAB_PANE_SPACE_TOP	const SIZE_TAB_PANE_SPACE_TOP		71
+nim	SIZE_TAB_PANE_SPACE_LEFT	luigi.html#SIZE_TAB_PANE_SPACE_LEFT	const SIZE_TAB_PANE_SPACE_LEFT		72
+nim	SIZE_SPLITTER	luigi.html#SIZE_SPLITTER	const SIZE_SPLITTER		74
+nim	SIZE_SCROLL_BAR	luigi.html#SIZE_SCROLL_BAR	const SIZE_SCROLL_BAR		76
+nim	SIZE_SCROLL_MINIMUM_THUMB	luigi.html#SIZE_SCROLL_MINIMUM_THUMB	const SIZE_SCROLL_MINIMUM_THUMB		77
+nim	SIZE_TABLE_HEADER	luigi.html#SIZE_TABLE_HEADER	const SIZE_TABLE_HEADER		82
+nim	SIZE_TABLE_COLUMN_GAP	luigi.html#SIZE_TABLE_COLUMN_GAP	const SIZE_TABLE_COLUMN_GAP		83
+nim	SIZE_TABLE_ROW	luigi.html#SIZE_TABLE_ROW	const SIZE_TABLE_ROW		84
+nim	SIZE_PANE_MEDIUM_BORDER	luigi.html#SIZE_PANE_MEDIUM_BORDER	const SIZE_PANE_MEDIUM_BORDER		86
+nim	SIZE_PANE_MEDIUM_GAP	luigi.html#SIZE_PANE_MEDIUM_GAP	const SIZE_PANE_MEDIUM_GAP		87
+nim	SIZE_PANE_SMALL_BORDER	luigi.html#SIZE_PANE_SMALL_BORDER	const SIZE_PANE_SMALL_BORDER		88
+nim	SIZE_PANE_SMALL_GAP	luigi.html#SIZE_PANE_SMALL_GAP	const SIZE_PANE_SMALL_GAP		89
+nim	SIZE_MDI_CHILD_BORDER	luigi.html#SIZE_MDI_CHILD_BORDER	const SIZE_MDI_CHILD_BORDER		91
+nim	SIZE_MDI_CHILD_TITLE	luigi.html#SIZE_MDI_CHILD_TITLE	const SIZE_MDI_CHILD_TITLE		92
+nim	SIZE_MDI_CHILD_CORNER	luigi.html#SIZE_MDI_CHILD_CORNER	const SIZE_MDI_CHILD_CORNER		93
+nim	SIZE_MDI_CHILD_MINIMUM_WIDTH	luigi.html#SIZE_MDI_CHILD_MINIMUM_WIDTH	const SIZE_MDI_CHILD_MINIMUM_WIDTH		94
+nim	SIZE_MDI_CHILD_MINIMUM_HEIGHT	luigi.html#SIZE_MDI_CHILD_MINIMUM_HEIGHT	const SIZE_MDI_CHILD_MINIMUM_HEIGHT		95
+nim	SIZE_MDI_CASCADE	luigi.html#SIZE_MDI_CASCADE	const SIZE_MDI_CASCADE		96
+nim	UPDATE_HOVERED	luigi.html#UPDATE_HOVERED	const UPDATE_HOVERED		100
+nim	UPDATE_PRESSED	luigi.html#UPDATE_PRESSED	const UPDATE_PRESSED		101
+nim	UPDATE_FOCUSED	luigi.html#UPDATE_FOCUSED	const UPDATE_FOCUSED		102
+nim	CURSOR_ARROW	luigi.html#CURSOR_ARROW	const CURSOR_ARROW		106
+nim	CURSOR_TEXT	luigi.html#CURSOR_TEXT	const CURSOR_TEXT		107
+nim	CURSOR_SPLIT_V	luigi.html#CURSOR_SPLIT_V	const CURSOR_SPLIT_V		108
+nim	CURSOR_SPLIT_H	luigi.html#CURSOR_SPLIT_H	const CURSOR_SPLIT_H		109
+nim	CURSOR_FLIPPED_ARROW	luigi.html#CURSOR_FLIPPED_ARROW	const CURSOR_FLIPPED_ARROW		110
+nim	CURSOR_CROSS_HAIR	luigi.html#CURSOR_CROSS_HAIR	const CURSOR_CROSS_HAIR		111
+nim	CURSOR_HAND	luigi.html#CURSOR_HAND	const CURSOR_HAND		112
+nim	CURSOR_RESIZE_UP	luigi.html#CURSOR_RESIZE_UP	const CURSOR_RESIZE_UP		113
+nim	CURSOR_RESIZE_LEFT	luigi.html#CURSOR_RESIZE_LEFT	const CURSOR_RESIZE_LEFT		114
+nim	CURSOR_RESIZE_UP_RIGHT	luigi.html#CURSOR_RESIZE_UP_RIGHT	const CURSOR_RESIZE_UP_RIGHT		115
+nim	CURSOR_RESIZE_UP_LEFT	luigi.html#CURSOR_RESIZE_UP_LEFT	const CURSOR_RESIZE_UP_LEFT		116
+nim	CURSOR_RESIZE_DOWN	luigi.html#CURSOR_RESIZE_DOWN	const CURSOR_RESIZE_DOWN		117
+nim	CURSOR_RESIZE_RIGHT	luigi.html#CURSOR_RESIZE_RIGHT	const CURSOR_RESIZE_RIGHT		118
+nim	CURSOR_RESIZE_DOWN_RIGHT	luigi.html#CURSOR_RESIZE_DOWN_RIGHT	const CURSOR_RESIZE_DOWN_RIGHT		119
+nim	CURSOR_RESIZE_DOWN_LEFT	luigi.html#CURSOR_RESIZE_DOWN_LEFT	const CURSOR_RESIZE_DOWN_LEFT		120
+nim	CURSOR_COUNT	luigi.html#CURSOR_COUNT	const CURSOR_COUNT		121
+nim	ALIGN_LEFT	luigi.html#ALIGN_LEFT	const ALIGN_LEFT		125
+nim	ALIGN_RIGHT	luigi.html#ALIGN_RIGHT	const ALIGN_RIGHT		126
+nim	ALIGN_CENTER	luigi.html#ALIGN_CENTER	const ALIGN_CENTER		127
+nim	ELEMENT_V_FILL	luigi.html#ELEMENT_V_FILL	const ELEMENT_V_FILL		131
+nim	ELEMENT_H_FILL	luigi.html#ELEMENT_H_FILL	const ELEMENT_H_FILL		132
+nim	ELEMENT_WINDOW	luigi.html#ELEMENT_WINDOW	const ELEMENT_WINDOW		133
+nim	ELEMENT_PARENT_PUSH	luigi.html#ELEMENT_PARENT_PUSH	const ELEMENT_PARENT_PUSH		134
+nim	ELEMENT_TAB_STOP	luigi.html#ELEMENT_TAB_STOP	const ELEMENT_TAB_STOP		135
+nim	ELEMENT_NON_CLIENT	luigi.html#ELEMENT_NON_CLIENT	const ELEMENT_NON_CLIENT		136
+nim	ELEMENT_DISABLED	luigi.html#ELEMENT_DISABLED	const ELEMENT_DISABLED		137
+nim	ELEMENT_HIDE	luigi.html#ELEMENT_HIDE	const ELEMENT_HIDE		138
+nim	ELEMENT_DESTROY_C	luigi.html#ELEMENT_DESTROY_C	const ELEMENT_DESTROY_C		139
+nim	ELEMENT_DESTROY_DESCENDENT	luigi.html#ELEMENT_DESTROY_DESCENDENT	const ELEMENT_DESTROY_DESCENDENT		140
+nim	WINDOW_MENU	luigi.html#WINDOW_MENU	const WINDOW_MENU		144
+nim	WINDOW_INSPECTOR	luigi.html#WINDOW_INSPECTOR	const WINDOW_INSPECTOR		145
+nim	WINDOW_CENTER_IN_OWNER	luigi.html#WINDOW_CENTER_IN_OWNER	const WINDOW_CENTER_IN_OWNER		146
+nim	WINDOW_MAXIMIZE	luigi.html#WINDOW_MAXIMIZE	const WINDOW_MAXIMIZE		147
+nim	PANEL_HORIZONTAL	luigi.html#PANEL_HORIZONTAL	const PANEL_HORIZONTAL		151
+nim	PANEL_GRAY	luigi.html#PANEL_GRAY	const PANEL_GRAY		152
+nim	PANEL_WHITE	luigi.html#PANEL_WHITE	const PANEL_WHITE		153
+nim	PANEL_EXPAND	luigi.html#PANEL_EXPAND	const PANEL_EXPAND		154
+nim	PANEL_MEDIUM_SPACING	luigi.html#PANEL_MEDIUM_SPACING	const PANEL_MEDIUM_SPACING		155
+nim	PANEL_SMALL_SPACING	luigi.html#PANEL_SMALL_SPACING	const PANEL_SMALL_SPACING		156
+nim	PANEL_SCROLL	luigi.html#PANEL_SCROLL	const PANEL_SCROLL		157
+nim	PANEL_BORDER	luigi.html#PANEL_BORDER	const PANEL_BORDER		158
+nim	BUTTON_SMALL	luigi.html#BUTTON_SMALL	const BUTTON_SMALL		162
+nim	BUTTON_MENU_ITEM	luigi.html#BUTTON_MENU_ITEM	const BUTTON_MENU_ITEM		163
+nim	BUTTON_CAN_FOCUS	luigi.html#BUTTON_CAN_FOCUS	const BUTTON_CAN_FOCUS		164
+nim	BUTTON_DROP_DOWN	luigi.html#BUTTON_DROP_DOWN	const BUTTON_DROP_DOWN		165
+nim	BUTTON_CHECKED	luigi.html#BUTTON_CHECKED	const BUTTON_CHECKED		166
+nim	CHECKBOX_ALLOW_INDETERMINATE	luigi.html#CHECKBOX_ALLOW_INDETERMINATE	const CHECKBOX_ALLOW_INDETERMINATE		170
+nim	CHECK_UNCHECKED	luigi.html#CHECK_UNCHECKED	const CHECK_UNCHECKED		171
+nim	CHECK_CHECKED	luigi.html#CHECK_CHECKED	const CHECK_CHECKED		172
+nim	CHECK_INDETERMINATE	luigi.html#CHECK_INDETERMINATE	const CHECK_INDETERMINATE		173
+nim	SPACER_LINE	luigi.html#SPACER_LINE	const SPACER_LINE		177
+nim	SPLIT_PANE_VERTICAL	luigi.html#SPLIT_PANE_VERTICAL	const SPLIT_PANE_VERTICAL		181
+nim	SCROLL_BAR_HORIZONTAL	luigi.html#SCROLL_BAR_HORIZONTAL	const SCROLL_BAR_HORIZONTAL		185
+nim	CODE_NO_MARGIN	luigi.html#CODE_NO_MARGIN	const CODE_NO_MARGIN		189
+nim	MENU_PLACE_ABOVE	luigi.html#MENU_PLACE_ABOVE	const MENU_PLACE_ABOVE		193
+nim	MENU_NO_SCROLL	luigi.html#MENU_NO_SCROLL	const MENU_NO_SCROLL		194
+nim	COLOR_PICKER_HAS_OPACITY	luigi.html#COLOR_PICKER_HAS_OPACITY	const COLOR_PICKER_HAS_OPACITY		198
+nim	MDI_CLIENT_TRANSPARENT	luigi.html#MDI_CLIENT_TRANSPARENT	const MDI_CLIENT_TRANSPARENT		202
+nim	MDI_CHILD_CLOSE_BUTTON	luigi.html#MDI_CHILD_CLOSE_BUTTON	const MDI_CHILD_CLOSE_BUTTON		203
+nim	KEYCODE_A	luigi.html#KEYCODE_A	const KEYCODE_A		207
+nim	KEYCODE_BACKSPACE	luigi.html#KEYCODE_BACKSPACE	const KEYCODE_BACKSPACE		208
+nim	KEYCODE_DELETE	luigi.html#KEYCODE_DELETE	const KEYCODE_DELETE		209
+nim	KEYCODE_DOWN	luigi.html#KEYCODE_DOWN	const KEYCODE_DOWN		210
+nim	KEYCODE_END	luigi.html#KEYCODE_END	const KEYCODE_END		211
+nim	KEYCODE_ENTER	luigi.html#KEYCODE_ENTER	const KEYCODE_ENTER		212
+nim	KEYCODE_ESCAPE	luigi.html#KEYCODE_ESCAPE	const KEYCODE_ESCAPE		213
+nim	KEYCODE_F1	luigi.html#KEYCODE_F1	const KEYCODE_F1		214
+nim	KEYCODE_HOME	luigi.html#KEYCODE_HOME	const KEYCODE_HOME		215
+nim	KEYCODE_LEFT	luigi.html#KEYCODE_LEFT	const KEYCODE_LEFT		216
+nim	KEYCODE_RIGHT	luigi.html#KEYCODE_RIGHT	const KEYCODE_RIGHT		217
+nim	KEYCODE_SPACE	luigi.html#KEYCODE_SPACE	const KEYCODE_SPACE		218
+nim	KEYCODE_TAB	luigi.html#KEYCODE_TAB	const KEYCODE_TAB		219
+nim	KEYCODE_UP	luigi.html#KEYCODE_UP	const KEYCODE_UP		220
+nim	KEYCODE_INSERT	luigi.html#KEYCODE_INSERT	const KEYCODE_INSERT		221
+nim	KEYCODE_0	luigi.html#KEYCODE_0	const KEYCODE_0		222
+nim	msgPaint	luigi.html#msgPaint	Message.msgPaint		225
+nim	msgLayout	luigi.html#msgLayout	Message.msgLayout		225
+nim	msgDestroy	luigi.html#msgDestroy	Message.msgDestroy		225
+nim	msgUpdate	luigi.html#msgUpdate	Message.msgUpdate		225
+nim	msgAnimate	luigi.html#msgAnimate	Message.msgAnimate		225
+nim	msgScrolled	luigi.html#msgScrolled	Message.msgScrolled		225
+nim	msgGetWidth	luigi.html#msgGetWidth	Message.msgGetWidth		225
+nim	msgGetHeight	luigi.html#msgGetHeight	Message.msgGetHeight		225
+nim	msgFindByPoint	luigi.html#msgFindByPoint	Message.msgFindByPoint		225
+nim	msgClientParent	luigi.html#msgClientParent	Message.msgClientParent		225
+nim	msgInputEventsStart	luigi.html#msgInputEventsStart	Message.msgInputEventsStart		225
+nim	msgLeftDown	luigi.html#msgLeftDown	Message.msgLeftDown		225
+nim	msgLeftUp	luigi.html#msgLeftUp	Message.msgLeftUp		225
+nim	msgMiddleDown	luigi.html#msgMiddleDown	Message.msgMiddleDown		225
+nim	msgMiddleUp	luigi.html#msgMiddleUp	Message.msgMiddleUp		225
+nim	msgRightDown	luigi.html#msgRightDown	Message.msgRightDown		225
+nim	msgRightUp	luigi.html#msgRightUp	Message.msgRightUp		225
+nim	msgKeyTyped	luigi.html#msgKeyTyped	Message.msgKeyTyped		225
+nim	msgMouseMove	luigi.html#msgMouseMove	Message.msgMouseMove		225
+nim	msgMouseDrag	luigi.html#msgMouseDrag	Message.msgMouseDrag		225
+nim	msgMouseWheel	luigi.html#msgMouseWheel	Message.msgMouseWheel		225
+nim	msgClicked	luigi.html#msgClicked	Message.msgClicked		225
+nim	msgGetCursor	luigi.html#msgGetCursor	Message.msgGetCursor		225
+nim	msgPressedDescendent	luigi.html#msgPressedDescendent	Message.msgPressedDescendent		225
+nim	msgInputEventsEnd	luigi.html#msgInputEventsEnd	Message.msgInputEventsEnd		225
+nim	msgValueChanged	luigi.html#msgValueChanged	Message.msgValueChanged		225
+nim	msgTableGetItem	luigi.html#msgTableGetItem	Message.msgTableGetItem		225
+nim	msgCodeGetMarginColor	luigi.html#msgCodeGetMarginColor	Message.msgCodeGetMarginColor		225
+nim	msgCodeDecorateLine	luigi.html#msgCodeDecorateLine	Message.msgCodeDecorateLine		225
+nim	msgWindowClose	luigi.html#msgWindowClose	Message.msgWindowClose		225
+nim	msgTabSelected	luigi.html#msgTabSelected	Message.msgTabSelected		225
+nim	msgWindowDropFiles	luigi.html#msgWindowDropFiles	Message.msgWindowDropFiles		225
+nim	msgWindowActivate	luigi.html#msgWindowActivate	Message.msgWindowActivate		225
+nim	msgUser	luigi.html#msgUser	Message.msgUser		225
+nim	Message	luigi.html#Message	enum Message		225
+nim	Rectangle	luigi.html#Rectangle	object Rectangle		263
+nim	Theme	luigi.html#Theme	object Theme		269
+nim	Painter	luigi.html#Painter	object Painter		292
+nim	Font	luigi.html#Font	object Font		300
+nim	Shortcut	luigi.html#Shortcut	object Shortcut		311
+nim	StringSelection	luigi.html#StringSelection	object StringSelection		319
+nim	KeyTyped	luigi.html#KeyTyped	object KeyTyped		324
+nim	TableGetItem	luigi.html#TableGetItem	object TableGetItem		329
+nim	CodeDecorateLine	luigi.html#CodeDecorateLine	object CodeDecorateLine		336
+nim	FindByPoint	luigi.html#FindByPoint	object FindByPoint		343
+nim	Element	luigi.html#Element	object Element		348
+nim	Window	luigi.html#Window	object Window		364
+nim	Panel	luigi.html#Panel	object Panel		405
+nim	Button	luigi.html#Button	object Button		411
+nim	Checkbox	luigi.html#Checkbox	object Checkbox		417
+nim	Label	luigi.html#Label	object Label		424
+nim	Spacer	luigi.html#Spacer	object Spacer		429
+nim	SplitPane	luigi.html#SplitPane	object SplitPane		434
+nim	TabPane	luigi.html#TabPane	object TabPane		438
+nim	ScrollBar	luigi.html#ScrollBar	object ScrollBar		443
+nim	CodeLine	luigi.html#CodeLine	object CodeLine		453
+nim	Code	luigi.html#Code	object Code		457
+nim	Gauge	luigi.html#Gauge	object Gauge		469
+nim	Table	luigi.html#Table	object Table		473
+nim	Textbox	luigi.html#Textbox	object Textbox		482
+nim	Menu	luigi.html#Menu	object Menu		490
+nim	Slider	luigi.html#Slider	object Slider		496
+nim	ColorPicker	luigi.html#ColorPicker	object ColorPicker		501
+nim	MDIClient	luigi.html#MDIClient	object MDIClient		508
+nim	MDIChild	luigi.html#MDIChild	object MDIChild		513
+nim	ExpandPane	luigi.html#ExpandPane	object ExpandPane		522
+nim	ImageDisplay	luigi.html#ImageDisplay	object ImageDisplay		528
+nim	WrapPanel	luigi.html#WrapPanel	object WrapPanel		543
+nim	UI	luigi.html#UI	object UI		546
+nim	ui	luigi.html#ui_2	var ui		564
+nim	castInt	luigi.html#castInt	const castInt		566
+nim	initialise	luigi.html#initialise	proc initialise()		568
+nim	messageLoop	luigi.html#messageLoop	proc messageLoop(): cint		569
+nim	elementCreate	luigi.html#elementCreate,csize_t,ptr.Element,uint32,proc(ptr.Element,Message,cint,pointer),cstring	proc elementCreate(bytes: csize_t; parent: ptr Element; flags: uint32 = 0;\n    messageClass: proc (a1: ptr Element; a2: Message; a3: cint; a4: pointer): cint {.\n    cdecl.}; cClassName: cstring): ptr Element		570
+nim	buttonCreate	luigi.html#buttonCreate,ptr.Element,uint32,cstring,pointer	proc buttonCreate(parent: ptr Element; flags: uint32 = 0; label: cstring;\n             labelBytes: pointer = castInt): ptr Button		574
+nim	checkboxCreate	luigi.html#checkboxCreate,ptr.Element,uint32,cstring,pointer	proc checkboxCreate(parent: ptr Element; flags: uint32 = 0; label: cstring;\n               labelBytes: pointer = castInt): ptr Checkbox		577
+nim	colorPickerCreate	luigi.html#colorPickerCreate,ptr.Element,uint32	proc colorPickerCreate(parent: ptr Element; flags: uint32 = 0): ptr ColorPicker		580
+nim	expandPaneCreate	luigi.html#expandPaneCreate,ptr.Element,uint32,cstring,pointer,uint32	proc expandPaneCreate(parent: ptr Element; flags: uint32 = 0; label: cstring;\n                 labelBytes: pointer = castInt; panelFlags: uint32 = 0): ptr ExpandPane		582
+nim	gaugeCreate	luigi.html#gaugeCreate,ptr.Element,uint32	proc gaugeCreate(parent: ptr Element; flags: uint32 = 0): ptr Gauge		585
+nim	mdiClientCreate	luigi.html#mdiClientCreate,ptr.Element,uint32	proc mdiClientCreate(parent: ptr Element; flags: uint32 = 0): ptr MDIClient		587
+nim	mdiChildCreate	luigi.html#mdiChildCreate,ptr.Element,uint32,Rectangle,cstring,pointer	proc mdiChildCreate(parent: ptr Element; flags: uint32 = 0; initialBounds: Rectangle;\n               title: cstring; titleBytes: pointer = castInt): ptr MDIChild		589
+nim	panelCreate	luigi.html#panelCreate,ptr.Element,uint32	proc panelCreate(parent: ptr Element; flags: uint32 = 0): ptr Panel		592
+nim	scrollBarCreate	luigi.html#scrollBarCreate,ptr.Element,uint32	proc scrollBarCreate(parent: ptr Element; flags: uint32 = 0): ptr ScrollBar		594
+nim	sliderCreate	luigi.html#sliderCreate,ptr.Element,uint32	proc sliderCreate(parent: ptr Element; flags: uint32 = 0): ptr Slider		596
+nim	spacerCreate	luigi.html#spacerCreate,ptr.Element,uint32,cint,cint	proc spacerCreate(parent: ptr Element; flags: uint32 = 0; width: cint; height: cint): ptr Spacer		598
+nim	splitPaneCreate	luigi.html#splitPaneCreate,ptr.Element,uint32,cfloat	proc splitPaneCreate(parent: ptr Element; flags: uint32 = 0; weight: cfloat): ptr SplitPane		600
+nim	tabPaneCreate	luigi.html#tabPaneCreate,ptr.Element,uint32,cstring	proc tabPaneCreate(parent: ptr Element; flags: uint32 = 0; tabs: cstring): ptr TabPane		602
+nim	wrapPanelCreate	luigi.html#wrapPanelCreate,ptr.Element,uint32	proc wrapPanelCreate(parent: ptr Element; flags: uint32 = 0): ptr WrapPanel		605
+nim	labelCreate	luigi.html#labelCreate,ptr.Element,uint32,cstring,pointer	proc labelCreate(parent: ptr Element; flags: uint32 = 0; label: cstring;\n            labelBytes: pointer = castInt): ptr Label		607
+nim	labelSetContent	luigi.html#labelSetContent,ptr.Label,cstring,pointer	proc labelSetContent(code: ptr Label; content: cstring; byteCount: pointer = castInt)		609
+nim	imageDisplayCreate	luigi.html#imageDisplayCreate,ptr.Element,uint32,ptr.uint32,csize_t,csize_t,csize_t	proc imageDisplayCreate(parent: ptr Element; flags: uint32 = 0; bits: ptr uint32;\n                   width: csize_t; height: csize_t; stride: csize_t): ptr ImageDisplay		611
+nim	imageDisplaySetContent	luigi.html#imageDisplaySetContent,ptr.ImageDisplay,ptr.uint32,csize_t,csize_t,csize_t	proc imageDisplaySetContent(display: ptr ImageDisplay; bits: ptr uint32;\n                       width: csize_t; height: csize_t; stride: csize_t)		614
+nim	windowCreate	luigi.html#windowCreate,ptr.Window,uint32,cstring,cint,cint	proc windowCreate(owner: ptr Window; flags: uint32 = 0; cTitle: cstring;\n             width: cint = 0; height: cint = 0): ptr Window		617
+nim	windowRegisterShortcut	luigi.html#windowRegisterShortcut,ptr.Window,Shortcut	proc windowRegisterShortcut(window: ptr Window; shortcut: Shortcut)		619
+nim	windowPostMessage	luigi.html#windowPostMessage,ptr.Window,Message,pointer	proc windowPostMessage(window: ptr Window; message: Message; dp: pointer)		621
+nim	windowPack	luigi.html#windowPack,ptr.Window,cint	proc windowPack(window: ptr Window; width: cint)		625
+nim	dialogShow	luigi.html#dialogShow,ptr.Window,uint32,cstring	proc dialogShow(window: ptr Window; flags: uint32 = 0; format: cstring): cstring		628
+nim	menuCreate	luigi.html#menuCreate,ptr.Element,uint32	proc menuCreate(parent: ptr Element; flags: uint32 = 0): ptr Menu		630
+nim	menuAddItem	luigi.html#menuAddItem,ptr.Menu,uint32,cstring,pointer,proc(pointer),pointer	proc menuAddItem(menu: ptr Menu; flags: uint32 = 0; label: cstring;\n            labelBytes: pointer = castInt; invoke: proc (cp: pointer) {.cdecl.};\n            cp: pointer = nil)		632
+nim	menuShow	luigi.html#menuShow,ptr.Menu	proc menuShow(menu: ptr Menu)		635
+nim	textboxCreate	luigi.html#textboxCreate,ptr.Element,uint32	proc textboxCreate(parent: ptr Element; flags: uint32 = 0): ptr Textbox		636
+nim	textboxReplace	luigi.html#textboxReplace,ptr.Textbox,cstring,pointer,bool	proc textboxReplace(textbox: ptr Textbox; text: cstring; bytes: pointer = castInt;\n               sendChangedMessage: bool)		638
+nim	textboxClear	luigi.html#textboxClear,ptr.Textbox,bool	proc textboxClear(textbox: ptr Textbox; sendChangedMessage: bool)		640
+nim	textboxMoveCaret	luigi.html#textboxMoveCaret,ptr.Textbox,bool,bool	proc textboxMoveCaret(textbox: ptr Textbox; backward: bool; word: bool)		642
+nim	tableCreate	luigi.html#tableCreate,ptr.Element,uint32,cstring	proc tableCreate(parent: ptr Element; flags: uint32 = 0; columns: cstring): ptr Table		644
+nim	tableHitTest	luigi.html#tableHitTest,ptr.Table,cint,cint	proc tableHitTest(table: ptr Table; x: cint; y: cint): cint		646
+nim	tableHeaderHitTest	luigi.html#tableHeaderHitTest,ptr.Table,cint,cint	proc tableHeaderHitTest(table: ptr Table; x: cint; y: cint): cint		650
+nim	tableEnsureVisible	luigi.html#tableEnsureVisible,ptr.Table,cint	proc tableEnsureVisible(table: ptr Table; index: cint): bool		654
+nim	tableResizeColumns	luigi.html#tableResizeColumns,ptr.Table	proc tableResizeColumns(table: ptr Table)		658
+nim	codeCreate	luigi.html#codeCreate,ptr.Element,uint32	proc codeCreate(parent: ptr Element; flags: uint32 = 0): ptr Code		659
+nim	codeFocusLine	luigi.html#codeFocusLine,ptr.Code,cint	proc codeFocusLine(code: ptr Code; index: cint)		661
+nim	codeHitTest	luigi.html#codeHitTest,ptr.Code,cint,cint	proc codeHitTest(code: ptr Code; x: cint; y: cint): cint		664
+nim	codeInsertContent	luigi.html#codeInsertContent,ptr.Code,cstring,pointer,bool	proc codeInsertContent(code: ptr Code; content: cstring;\n                  byteCount: pointer = castInt; replace: bool)		668
+nim	drawBlock	luigi.html#drawBlock,ptr.Painter,Rectangle,uint32	proc drawBlock(painter: ptr Painter; rectangle: Rectangle; color: uint32)		670
+nim	drawInvert	luigi.html#drawInvert,ptr.Painter,Rectangle	proc drawInvert(painter: ptr Painter; rectangle: Rectangle)		672
+nim	drawLine	luigi.html#drawLine,ptr.Painter,cint,cint,cint,cint,uint32	proc drawLine(painter: ptr Painter; x0: cint; y0: cint; x1: cint; y1: cint;\n         color: uint32): bool		674
+nim	drawTriangle	luigi.html#drawTriangle,ptr.Painter,cint,cint,cint,cint,cint,cint,uint32	proc drawTriangle(painter: ptr Painter; x0: cint; y0: cint; x1: cint; y1: cint;\n             x2: cint; y2: cint; color: uint32)		678
+nim	drawTriangleOutline	luigi.html#drawTriangleOutline,ptr.Painter,cint,cint,cint,cint,cint,cint,uint32	proc drawTriangleOutline(painter: ptr Painter; x0: cint; y0: cint; x1: cint;\n                    y1: cint; x2: cint; y2: cint; color: uint32)		680
+nim	drawGlyph	luigi.html#drawGlyph,ptr.Painter,cint,cint,cint,uint32	proc drawGlyph(painter: ptr Painter; x: cint; y: cint; c: cint; color: uint32)		683
+nim	drawRectangle	luigi.html#drawRectangle,ptr.Painter,Rectangle,uint32,uint32,Rectangle	proc drawRectangle(painter: ptr Painter; r: Rectangle; mainColor: uint32;\n              borderColor: uint32; borderSize: Rectangle)		685
+nim	drawBorder	luigi.html#drawBorder,ptr.Painter,Rectangle,uint32,Rectangle	proc drawBorder(painter: ptr Painter; r: Rectangle; borderColor: uint32;\n           borderSize: Rectangle)		688
+nim	drawString	luigi.html#drawString,ptr.Painter,Rectangle,cstring,pointer,uint32,cint,ptr.StringSelection	proc drawString(painter: ptr Painter; r: Rectangle; string: cstring;\n           bytes: pointer = castInt; color: uint32; align: cint;\n           selection: ptr StringSelection)		690
+nim	drawStringHighlighted	luigi.html#drawStringHighlighted,ptr.Painter,Rectangle,cstring,pointer,cint	proc drawStringHighlighted(painter: ptr Painter; r: Rectangle; string: cstring;\n                      bytes: pointer = castInt; tabSize: cint): cint		693
+nim	measureStringWidth	luigi.html#measureStringWidth,cstring,pointer	proc measureStringWidth(string: cstring; bytes: pointer = castInt): cint		696
+nim	measureStringHeight	luigi.html#measureStringHeight	proc measureStringHeight(): cint		698
+nim	animateClock	luigi.html#animateClock	proc animateClock(): uint64		699
+nim	elementAnimate	luigi.html#elementAnimate,ptr.Element,bool	proc elementAnimate(element: ptr Element; stop: bool): bool		702
+nim	elementDestroy	luigi.html#elementDestroy,ptr.Element	proc elementDestroy(element: ptr Element)		704
+nim	elementDestroyDescendents	luigi.html#elementDestroyDescendents,ptr.Element	proc elementDestroyDescendents(element: ptr Element)		705
+nim	elementFindByPoint	luigi.html#elementFindByPoint,ptr.Element,cint,cint	proc elementFindByPoint(element: ptr Element; x: cint; y: cint): ptr Element		707
+nim	elementFocus	luigi.html#elementFocus,ptr.Element	proc elementFocus(element: ptr Element)		709
+nim	elementScreenBounds	luigi.html#elementScreenBounds,ptr.Element	proc elementScreenBounds(element: ptr Element): Rectangle		710
+nim	elementRefresh	luigi.html#elementRefresh,ptr.Element	proc elementRefresh(element: ptr Element)		714
+nim	elementRepaint	luigi.html#elementRepaint,ptr.Element,ptr.Rectangle	proc elementRepaint(element: ptr Element; region: ptr Rectangle = nil)		715
+nim	elementMove	luigi.html#elementMove,ptr.Element,Rectangle,bool	proc elementMove(element: ptr Element; bounds: Rectangle; alwaysLayout: bool)		717
+nim	elementMessage	luigi.html#elementMessage,ptr.Element,Message,cint,pointer	proc elementMessage(element: ptr Element; message: Message; di: cint; dp: pointer): cint		719
+nim	elementChangeParent	luigi.html#elementChangeParent,ptr.Element,ptr.Element,ptr.Element	proc elementChangeParent(element: ptr Element; newParent: ptr Element;\n                    insertBefore: ptr Element)		721
+nim	parentPush	luigi.html#parentPush,ptr.Element	proc parentPush(element: ptr Element): ptr Element		726
+nim	parentPop	luigi.html#parentPop	proc parentPop(): ptr Element		727
+nim	rectangleIntersection	luigi.html#rectangleIntersection,Rectangle,Rectangle	proc rectangleIntersection(a: Rectangle; b: Rectangle): Rectangle		728
+nim	rectangleBounding	luigi.html#rectangleBounding,Rectangle,Rectangle	proc rectangleBounding(a: Rectangle; b: Rectangle): Rectangle		730
+nim	rectangleAdd	luigi.html#rectangleAdd,Rectangle,Rectangle	proc rectangleAdd(a: Rectangle; b: Rectangle): Rectangle		732
+nim	rectangleTranslate	luigi.html#rectangleTranslate,Rectangle,Rectangle	proc rectangleTranslate(a: Rectangle; b: Rectangle): Rectangle		734
+nim	rectangleEquals	luigi.html#rectangleEquals,Rectangle,Rectangle	proc rectangleEquals(a: Rectangle; b: Rectangle): bool		736
+nim	rectangleContains	luigi.html#rectangleContains,Rectangle,cint,cint	proc rectangleContains(a: Rectangle; x: cint; y: cint): bool		738
+nim	colorToHSV	luigi.html#colorToHSV,uint32,ptr.cfloat,ptr.cfloat,ptr.cfloat	proc colorToHSV(rgb: uint32; hue: ptr cfloat; saturation: ptr cfloat;\n           value: ptr cfloat): bool		740
+nim	colorToRGB	luigi.html#colorToRGB,cfloat,cfloat,cfloat,ptr.uint32	proc colorToRGB(hue: cfloat; saturation: cfloat; value: cfloat; rgb: ptr uint32)		742
+nim	stringCopy	luigi.html#stringCopy,cstring,pointer	proc stringCopy(in: cstring; inBytes: pointer = castInt): cstring		744
+nim	fontCreate	luigi.html#fontCreate,cstring,uint32	proc fontCreate(cPath: cstring; size: uint32): ptr Font		746
+nim	fontActivate	luigi.html#fontActivate,ptr.Font	proc fontActivate(font: ptr Font): ptr Font		748
+nim	KEYCODE_LETTER	luigi.html#KEYCODE_LETTER.t,untyped	template KEYCODE_LETTER(x: untyped): cint		754
+nim	KEYCODE_DIGIT	luigi.html#KEYCODE_DIGIT.t,untyped	template KEYCODE_DIGIT(x: untyped): cint		755
+nim	KEYCODE_FKEY	luigi.html#KEYCODE_FKEY.t,untyped	template KEYCODE_FKEY(x: untyped): cint		756
+nim	RECT_1	luigi.html#RECT_1.t,cint	template RECT_1(x: cint): Rectangle		758
+nim	RECT_1I	luigi.html#RECT_1I.t	template RECT_1I(x): Rectangle		759
+nim	RECT_2	luigi.html#RECT_2.t,cint,cint	template RECT_2(x, y: cint): Rectangle		760
+nim	RECT_2I	luigi.html#RECT_2I.t,cint,cint	template RECT_2I(x, y: cint): Rectangle		761
+nim	RECT_2S	luigi.html#RECT_2S.t,cint,cint	template RECT_2S(x, y: cint): Rectangle		762
+nim	RECT_4	luigi.html#RECT_4.t,cint,cint,cint,cint	template RECT_4(x, y, z, w: cint): Rectangle		763
+nim	RECT_WIDTH	luigi.html#RECT_WIDTH.t,Rectangle	template RECT_WIDTH(r: Rectangle): cint		764
+nim	RECT_HEIGHT	luigi.html#RECT_HEIGHT.t,Rectangle	template RECT_HEIGHT(r: Rectangle): cint		765
+nim	RECT_TOTAL_H	luigi.html#RECT_TOTAL_H.t,Rectangle	template RECT_TOTAL_H(r: Rectangle): cint		766
+nim	RECT_TOTAL_V	luigi.html#RECT_TOTAL_V.t,Rectangle	template RECT_TOTAL_V(r: Rectangle): cint		767
+nim	RECT_SIZE	luigi.html#RECT_SIZE.t,Rectangle	template RECT_SIZE(r: Rectangle): tuple[w, h: int]		768
+nim	RECT_TOP_LEFT	luigi.html#RECT_TOP_LEFT.t,Rectangle	template RECT_TOP_LEFT(r: Rectangle): tuple[l, t: int]		769
+nim	RECT_BOTTOM_LEFT	luigi.html#RECT_BOTTOM_LEFT.t,Rectangle	template RECT_BOTTOM_LEFT(r: Rectangle): tuple[l, b: int]		770
+nim	RECT_BOTTOM_RIGHT	luigi.html#RECT_BOTTOM_RIGHT.t,Rectangle	template RECT_BOTTOM_RIGHT(r: Rectangle): tuple[r, b: int]		771
+nim	RECT_ALL	luigi.html#RECT_ALL.t,Rectangle	template RECT_ALL(r: Rectangle): tuple[l, r, t, b: int]		772
+nim	RECT_VALID	luigi.html#RECT_VALID.t,Rectangle	template RECT_VALID(r: Rectangle): bool		773

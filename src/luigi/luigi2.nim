@@ -644,9 +644,6 @@ proc windowPostMessage*(window: ptr Window; message: Message; dp: pointer) {.cde
 proc windowPack*(window: ptr Window; width: cint) {.cdecl, importc: "UIWindowPack".}
   ##  Change the size of the window to best match its contents.
 
-type
-  DialogUserCallback* = proc (a1: ptr Element) {.cdecl.}
-
 proc dialogShow*(window: ptr Window; flags: uint32 = 0; format: cstring): cstring {.varargs,
     cdecl, importc: "UIDialogShow".}
 proc menuCreate*(parent: ptr Element; flags: uint32 = 0): ptr Menu {.cdecl,

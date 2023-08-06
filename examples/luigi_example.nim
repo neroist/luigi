@@ -40,6 +40,9 @@ var
   themeEditorColorPicker: ptr ColorPicker
   themeEditorTable: ptr Table
 
+  slider: ptr Slider
+  gauge: ptr Gauge
+
   code: ptr Code
 
   themeEditorSelectedColor: int = -1
@@ -143,6 +146,12 @@ proc btn2Message(element: ptr Element, message: Message, di: cint, dp: pointer):
     menuAddItem(menu, 0, "Item 1\tF6", castInt, menuCallback, cast[pointer](cstring"Item 2 clicked!"))
     menuShow(menu)
 
+proc sliderMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
+  if message == msgValueChanged:
+    gauge.position = slider.position
+
+    elementRepaint(addr gauge.e)
+
 # NEW
 proc codeMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message in [msgMouseMove, msgMouseDrag]:
@@ -208,8 +217,14 @@ block:
   buttonCreate(addr panel.e, 0, "3").e.messageUser = btnMessage
   buttonCreate(addr panel.e, 0, "4").e.messageUser = btnMessage
   buttonCreate(addr panel.e, 0, "5").e.messageUser = btnMessage
-  gaugeCreate(addr panel.e).position = 0.3
-  sliderCreate(addr panel.e).position = 0.3
+  
+  gauge = gaugeCreate(addr panel.e)
+  gauge.position = 0.3
+
+  slider = sliderCreate(addr panel.e)
+  slider.e.messageUser = sliderMessage
+  slider.position = 0.3
+
   discard textboxCreate(addr panel.e)
 
 block:

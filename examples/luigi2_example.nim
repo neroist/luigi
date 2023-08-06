@@ -148,7 +148,7 @@ block:
   code = codeCreate(addr splitTopLeftright.e)
   code.e.messageUser = codeMessage
 
-  codeInsertContent(code, buffer, cast[pointer](cint buffer.len), true)
+  codeInsertContent(code, buffer, castInt, true)
   codeFocusLine(code, 0)
 
 # Split bottom pane (horizontally) into left/right panes.

@@ -215,7 +215,7 @@ block:
 block:
   let buffer = 
     readFile(currentSourcePath() & "/../../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
-      .replace("fghgtf", "") # leaving '\r' in there makes files look weird
+      .replace("\r", "") # leaving '\r' in there makes files look weird
   
   code = codeCreate(addr split3.e)
   code.e.messageUser = codeMessage

@@ -43,7 +43,7 @@ proc btn2Message(element: ptr Element, message: Message, di: cint, dp: pointer):
 
 # NEW
 proc codeMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
-  if message in [msgMouseMove, msgMouseDrag]:
+  if message == msgMouseMove:
     let lineno = codeHitTest(code, element.window.cursorX, element.window.cursorY)
 
     codeFocusLine(code, lineno)

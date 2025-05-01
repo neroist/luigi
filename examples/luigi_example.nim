@@ -143,7 +143,7 @@ proc btn2Message(element: ptr Element, message: Message, di: cint, dp: pointer):
     let menu = menuCreate(element)
 
     menuAddItem(menu, 0, "Item 1\tCtrl+F5", castInt, menuCallback, cast[pointer](cstring"Item 1 clicked!"))
-    menuAddItem(menu, 0, "Item 1\tF6", castInt, menuCallback, cast[pointer](cstring"Item 2 clicked!"))
+    menuAddItem(menu, 0, "Item 2\tF6", castInt, menuCallback, cast[pointer](cstring"Item 2 clicked!"))
     menuShow(menu)
 
 proc sliderMessage(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
@@ -228,8 +228,7 @@ block:
   discard textboxCreate(addr panel.e)
 
 block:
-  let buffer = 
-    readFile(currentSourcePath() & "/../../src/luigi.nim") # readFile("../src/luigi/source/luigi.c")
+  let buffer = static(staticRead("../src/luigi.nim"))
       .replace("\r", "") # leaving '\r' in there makes files look weird
   
   code = codeCreate(addr split3.e)

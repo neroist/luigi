@@ -29,7 +29,7 @@ slider.e.messageUser = proc(element: ptr Element, message: Message, di: cint, dp
 
 textbox.e.messageUser = proc(element: ptr Element, message: Message, di: cint, dp: pointer): cint {.cdecl.} =
   if message == msgValueChanged:
-    labelSetContent(label, textbox.string, textbox.bytes)
+    labelSetContent(label, textbox.string, castInt)
 
     elementRefresh(addr label.e)
     elementRefresh(label.e.parent)
